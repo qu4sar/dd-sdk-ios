@@ -6,7 +6,9 @@
 
 #import "ObjcAppLaunchHandler.h"
 #import <sys/sysctl.h>
-#import <UIKit/UIKit.h>
+#if !TARGET_OS_OSX
+    #import <UIKit/UIKit.h>
+#endif
 #import <pthread.h>
 
 // `AppLaunchHandler` aims to track some times as part of the sequence described in Apple's "About the App Launch Sequence"
